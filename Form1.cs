@@ -59,7 +59,7 @@ namespace FileRenamer
 
             foreach (String fileName in filesInFolder)
             {
-                checkListBox_FolderFiles.Items.Add(fileName);
+                checkListBox_FolderFiles.Items.Add(fileName.Replace(url + "/", ""));
             }
 
            //  checkListBox_FolderFiles.Items.AddRange(filesInFolder);
