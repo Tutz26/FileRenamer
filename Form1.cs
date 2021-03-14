@@ -124,16 +124,19 @@ namespace FileRenamer
         private void buttonPrefixAdd_Click(object sender, EventArgs e)
         {
             addPrefixToFileName();
+            progressBar.Value = 0;
         }//[DONE]
 
         private void buttonSuffixAdd_Click(object sender, EventArgs e)
         {
             addSuffixToFileName();
+            progressBar.Value = 0;
         }//[DONE]
 
         private void buttonChangeText_Click(object sender, EventArgs e)
         {
             changeTextToFileName();
+            progressBar.Value = 0;
         }//[DONE]
 
 
@@ -246,7 +249,6 @@ namespace FileRenamer
 
                 checkListFill(directoryURL);
                 MessageBox.Show("Succesfully added prefix to the marked files");
-                progressBar.Value = 0;
 
             }
 
@@ -278,7 +280,6 @@ namespace FileRenamer
                     }
                     progressBar.PerformStep();
                     ++itemCount;
-                    progressBar.Value = 0;
                 }
 
                 checkListFill(directoryURL);
@@ -312,8 +313,7 @@ namespace FileRenamer
                         }
                     }
                     progressBar.PerformStep();
-                    ++itemCount;
-                    progressBar.Value = 0;
+                    ++itemCount;                    
                 }
 
                 checkListFill(directoryURL);
@@ -371,6 +371,36 @@ namespace FileRenamer
             }
         }//[DONE]
 
+        private void button_UseAllEditions_Click(object sender, EventArgs e)
+        {
+            if (textBoxPrefixContainer.Text != "" || textBoxSuffixContainer.Text != "" || textBoxFrom.Text != "")
+            {
+                int itemCount = 0;
+                progressBar.Maximum = checkListBoxDirectoryFiles.Items.Count;
+                progressBar.Step = 1;
 
+                foreach (var item in checkListBoxDirectoryFiles.CheckedItems)
+                {
+
+                    for (int i = 0; i < checkedItemsList.Count; i++)
+                    {
+                        if (finalText(item.ToString()) == checkedItemsList[i])
+                        {
+                            if (fileRenaming(item.ToString(), finalText(item.ToString()), directoryURL))
+                            {
+                                checkListBoxSelectedFiles.SetItemChecked(itemCount, true);
+                            }
+                        }
+                    }
+                    progressBar.PerformStep();
+                    ++itemCount;
+                }
+
+                checkListFill(directoryURL);
+                MessageBox.Show("Succesfully added all editions to the marked files");
+                progressBar.Value = 0;
+
+            }
+        }//[DONE]
     }
 }

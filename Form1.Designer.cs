@@ -48,6 +48,7 @@ namespace FileRenamer
             this.label_SelectedURL = new System.Windows.Forms.Label();
             this.button_CheckAll = new System.Windows.Forms.Button();
             this.button_UncheckAll = new System.Windows.Forms.Button();
+            this.button_UseAllEditions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkListBoxDirectoryFiles
@@ -212,11 +213,22 @@ namespace FileRenamer
             this.button_UncheckAll.UseVisualStyleBackColor = true;
             this.button_UncheckAll.Click += new System.EventHandler(this.button_UncheckAll_Click);
             // 
+            // button_UseAllEditions
+            // 
+            this.button_UseAllEditions.Location = new System.Drawing.Point(384, 376);
+            this.button_UseAllEditions.Name = "button_UseAllEditions";
+            this.button_UseAllEditions.Size = new System.Drawing.Size(107, 23);
+            this.button_UseAllEditions.TabIndex = 19;
+            this.button_UseAllEditions.Text = "Use All Editions";
+            this.button_UseAllEditions.UseVisualStyleBackColor = true;
+            this.button_UseAllEditions.Click += new System.EventHandler(this.button_UseAllEditions_Click);
+            // 
             // FileRenamer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 409);
+            this.Controls.Add(this.button_UseAllEditions);
             this.Controls.Add(this.button_UncheckAll);
             this.Controls.Add(this.button_CheckAll);
             this.Controls.Add(this.label_SelectedURL);
@@ -263,6 +275,7 @@ namespace FileRenamer
         private System.Windows.Forms.Label label_SelectedURL;
         private System.Windows.Forms.Button button_CheckAll;
         private System.Windows.Forms.Button button_UncheckAll;
+        private System.Windows.Forms.Button button_UseAllEditions;
     }
 }
 
