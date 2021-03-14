@@ -29,7 +29,6 @@ namespace FileRenamer
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileRenamer));
             this.checkListBoxDirectoryFiles = new System.Windows.Forms.CheckedListBox();
             this.textBoxPrefixContainer = new System.Windows.Forms.TextBox();
             this.checkListBoxSelectedFiles = new System.Windows.Forms.CheckedListBox();
@@ -248,7 +247,6 @@ namespace FileRenamer
             this.Controls.Add(this.checkListBoxSelectedFiles);
             this.Controls.Add(this.textBoxPrefixContainer);
             this.Controls.Add(this.checkListBoxDirectoryFiles);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FileRenamer";
             this.Text = "FileRenamer";
             this.ResumeLayout(false);
