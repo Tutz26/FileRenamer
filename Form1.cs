@@ -41,6 +41,7 @@ namespace FileRenamer
 
         }
 
+
         //EVENTS:
         private void button_ToDirectoryDialog_Click(object sender, EventArgs e)
         {
@@ -135,6 +136,7 @@ namespace FileRenamer
             changeTextToFileName();
         }//[DONE]
 
+
         // LIST AND CALCULATIONS:
         private void checkListFill(String url) 
         {
@@ -213,6 +215,7 @@ namespace FileRenamer
 
         }
 
+
         // ACTIONS:
         private void addPrefixToFileName()
         {
@@ -220,6 +223,9 @@ namespace FileRenamer
             if (textBoxPrefixContainer.Text != "")
             {
                 int itemCount = 0;
+                progressBar.Maximum = checkListBoxDirectoryFiles.Items.Count;
+                progressBar.Step = 1;
+
                 foreach (var item in checkListBoxDirectoryFiles.CheckedItems) 
                 {
                     
@@ -234,11 +240,13 @@ namespace FileRenamer
                             }
                         }                    
                     }
+                    progressBar.PerformStep();
                     ++itemCount;
                 }
 
                 checkListFill(directoryURL);
                 MessageBox.Show("Succesfully added prefix to the marked files");
+                progressBar.Value = 0;
 
             }
 
@@ -250,6 +258,9 @@ namespace FileRenamer
             if (textBoxSuffixContainer.Text != "")
             {
                 int itemCount = 0;
+                progressBar.Maximum = checkListBoxDirectoryFiles.Items.Count;
+                progressBar.Step = 1;
+
                 foreach (var item in checkListBoxDirectoryFiles.CheckedItems)
                 {
 
@@ -265,7 +276,9 @@ namespace FileRenamer
                             }
                         }
                     }
+                    progressBar.PerformStep();
                     ++itemCount;
+                    progressBar.Value = 0;
                 }
 
                 checkListFill(directoryURL);
@@ -281,6 +294,9 @@ namespace FileRenamer
             if (textBoxFrom.Text != "")
             {
                 int itemCount = 0;
+                progressBar.Maximum = checkListBoxDirectoryFiles.Items.Count;
+                progressBar.Step = 1;
+
                 foreach (var item in checkListBoxDirectoryFiles.CheckedItems)
                 {
 
@@ -295,7 +311,9 @@ namespace FileRenamer
                             }
                         }
                     }
+                    progressBar.PerformStep();
                     ++itemCount;
+                    progressBar.Value = 0;
                 }
 
                 checkListFill(directoryURL);
@@ -354,12 +372,5 @@ namespace FileRenamer
         }//[DONE]
 
 
-        // TODO:
-        private void progressBarHandler(int minimumQty, int maximumQty) 
-        {
-            progressBar.Minimum = minimumQty;
-            progressBar.Maximum = maximumQty;
-        
-        }
     }
 }
