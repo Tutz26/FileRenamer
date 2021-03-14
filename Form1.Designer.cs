@@ -46,6 +46,8 @@ namespace FileRenamer
             this.textBoxFrom = new System.Windows.Forms.TextBox();
             this.labelExploringDirectory = new System.Windows.Forms.Label();
             this.label_SelectedURL = new System.Windows.Forms.Label();
+            this.button_CheckAll = new System.Windows.Forms.Button();
+            this.button_UncheckAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkListBoxDirectoryFiles
@@ -190,11 +192,33 @@ namespace FileRenamer
             this.label_SelectedURL.Size = new System.Drawing.Size(0, 15);
             this.label_SelectedURL.TabIndex = 16;
             // 
+            // button_CheckAll
+            // 
+            this.button_CheckAll.Location = new System.Drawing.Point(144, 376);
+            this.button_CheckAll.Name = "button_CheckAll";
+            this.button_CheckAll.Size = new System.Drawing.Size(90, 23);
+            this.button_CheckAll.TabIndex = 17;
+            this.button_CheckAll.Text = "Check All";
+            this.button_CheckAll.UseVisualStyleBackColor = true;
+            this.button_CheckAll.Click += new System.EventHandler(this.button_CheckAll_Click);
+            // 
+            // button_UncheckAll
+            // 
+            this.button_UncheckAll.Location = new System.Drawing.Point(240, 376);
+            this.button_UncheckAll.Name = "button_UncheckAll";
+            this.button_UncheckAll.Size = new System.Drawing.Size(90, 23);
+            this.button_UncheckAll.TabIndex = 18;
+            this.button_UncheckAll.Text = "Uncheck All";
+            this.button_UncheckAll.UseVisualStyleBackColor = true;
+            this.button_UncheckAll.Click += new System.EventHandler(this.button_UncheckAll_Click);
+            // 
             // FileRenamer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 409);
+            this.Controls.Add(this.button_UncheckAll);
+            this.Controls.Add(this.button_CheckAll);
             this.Controls.Add(this.label_SelectedURL);
             this.Controls.Add(this.labelExploringDirectory);
             this.Controls.Add(this.textBoxFrom);
@@ -237,6 +261,8 @@ namespace FileRenamer
         private System.Windows.Forms.TextBox textBoxFrom;
         private System.Windows.Forms.Label labelExploringDirectory;
         private System.Windows.Forms.Label label_SelectedURL;
+        private System.Windows.Forms.Button button_CheckAll;
+        private System.Windows.Forms.Button button_UncheckAll;
     }
 }
 

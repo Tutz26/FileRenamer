@@ -13,7 +13,9 @@ using System.Collections;
 namespace FileRenamer
 {
     public partial class FileRenamer : Form
-    {
+    {        
+
+
         // List where the files string in the directory are stored:
         List<string> filesInDirectory = new List<string>();
         List<string> checkedItemsList = new List<string>();
@@ -21,7 +23,6 @@ namespace FileRenamer
         // URL of selected directory:
         String directoryURL;
 
-        // Progress Bar
 
         public FileRenamer()
         {
@@ -127,12 +128,12 @@ namespace FileRenamer
         private void buttonSuffixAdd_Click(object sender, EventArgs e)
         {
             addSuffixToFileName();
-        }
+        }//[DONE]
 
         private void buttonChangeText_Click(object sender, EventArgs e)
         {
             changeTextToFileName();
-        }
+        }//[DONE]
 
         // LIST AND CALCULATIONS:
         private void checkListFill(String url) 
@@ -332,8 +333,33 @@ namespace FileRenamer
 
 
 
+        }//[DONE]
+
+
+        // FEATURES:
+        private void button_CheckAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < checkListBoxDirectoryFiles.Items.Count; i++)
+            {
+                checkListBoxDirectoryFiles.SetItemChecked(i, true);            
+            }
+        }//[DONE]
+
+        private void button_UncheckAll_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < checkListBoxDirectoryFiles.Items.Count; i++)
+            {
+                checkListBoxDirectoryFiles.SetItemChecked(i, false);
+            }
+        }//[DONE]
+
+
+        // TODO:
+        private void progressBarHandler(int minimumQty, int maximumQty) 
+        {
+            progressBar.Minimum = minimumQty;
+            progressBar.Maximum = maximumQty;
+        
         }
-
-
     }
 }
