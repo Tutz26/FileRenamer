@@ -1,0 +1,17 @@
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\FileRenamer.exe
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\FileRenamer.deps.json
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\FileRenamer.runtimeconfig.json
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\FileRenamer.runtimeconfig.dev.json
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\FileRenamer.dll
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\ref\FileRenamer.dll
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\bin\Release\net5.0-windows\FileRenamer.pdb
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.FileRenamer.resources
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.csproj.GenerateResource.cache
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.AssemblyInfoInputs.cache
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.AssemblyInfo.cs
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.csproj.CoreCompileInputs.cache
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.dll
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\ref\FileRenamer.dll
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.pdb
+C:\Users\Tutz\Desktop\Octavo Semestre\Proyectos Multimedia\FIleRenamer\FileRenamer\obj\Release\net5.0-windows\FileRenamer.genruntimeconfig.cache
