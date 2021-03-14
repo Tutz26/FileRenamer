@@ -6,12 +6,12 @@ Basic desktop application to **rename** files contained in a certain Directory:
 
 1 - Click on the "Directory" Button to open a Dialog.
 
-![alt text](https://github.com/Tutz26/FileRenamer/tree/master/img/Directory.png)
+![Directory selection button](https://github.com/Tutz26/FileRenamer/tree/master/img/Directory.png)
 
 2 - Select the directory which contains the files you want to rename. If you don't see your files there
     don't panic. They are still there, but the dialog won't show them since only shows folders.
 
-![alt text](https://github.com/Tutz26/FileRenamer/tree/master/img/Dialog.png)
+![Windows explorer dialog](https://github.com/Tutz26/FileRenamer/tree/master/img/Dialog.png)
 
   
 3 - Check the files you want to rename;
@@ -20,7 +20,7 @@ Basic desktop application to **rename** files contained in a certain Directory:
     you can use "Uncheck All" to uncheck all the items.
   [note: You will notice in the right side box the names of the checked files]
   
-  ![alt text](https://github.com/Tutz26/FileRenamer/tree/master/img/Selections.png)
+  ![Check marks on selection](https://github.com/Tutz26/FileRenamer/tree/master/img/Selections.png)
   
 ####  FOR PREFIX ADDING:
 4 - Type the text you want to add as Prefix in the container below the label
@@ -43,7 +43,7 @@ Basic desktop application to **rename** files contained in a certain Directory:
     You just have to write in the second container below the label "Change Text" the
     replacement text, and it will be displayed in the right side box.
     
-![alt text](https://github.com/Tutz26/FileRenamer/tree/master/img/Textbox.png)  
+![Text box and buttons](https://github.com/Tutz26/FileRenamer/tree/master/img/Textbox.png)  
   
     
 6.1 - For just chaning the texts, press the "Change Text" button.
@@ -55,7 +55,7 @@ Basic desktop application to **rename** files contained in a certain Directory:
     text and just press the button "Use All Editions" and it will work all your files exactly as they
     are shown in the right side box.
 
-![alt text](https://github.com/Tutz26/FileRenamer/tree/master/img/AllEdits.png)
+![Edit all button](https://github.com/Tutz26/FileRenamer/tree/master/img/AllEdits.png)
 
 
 With Love by Tutz26
