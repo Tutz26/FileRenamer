@@ -29,94 +29,96 @@ namespace FileRenamer
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkListBox_DirectoryFiles = new System.Windows.Forms.CheckedListBox();
-            this.textBox_PrefixContainer = new System.Windows.Forms.TextBox();
-            this.checkListBox_SelectedFiles = new System.Windows.Forms.CheckedListBox();
-            this.label_Prefix = new System.Windows.Forms.Label();
-            this.button_PrefixAdd = new System.Windows.Forms.Button();
-            this.label_Suffix = new System.Windows.Forms.Label();
-            this.textBox_SuffixContainer = new System.Windows.Forms.TextBox();
-            this.button_SuffixAdd = new System.Windows.Forms.Button();
+            this.checkListBoxDirectoryFiles = new System.Windows.Forms.CheckedListBox();
+            this.textBoxPrefixContainer = new System.Windows.Forms.TextBox();
+            this.checkListBoxSelectedFiles = new System.Windows.Forms.CheckedListBox();
+            this.labelPrefix = new System.Windows.Forms.Label();
+            this.buttonPrefixAdd = new System.Windows.Forms.Button();
+            this.labelSuffix = new System.Windows.Forms.Label();
+            this.textBoxSuffixContainer = new System.Windows.Forms.TextBox();
+            this.buttonSuffixAdd = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.button_ToDirectoryDialog = new System.Windows.Forms.Button();
-            this.label_ChangeText = new System.Windows.Forms.Label();
-            this.textBox_To = new System.Windows.Forms.TextBox();
-            this.button_ChangeText = new System.Windows.Forms.Button();
-            this.textBox_From = new System.Windows.Forms.TextBox();
-            this.label_extension = new System.Windows.Forms.Label();
-            this.label_ExploringDirectory = new System.Windows.Forms.Label();
+            this.buttonToDirectoryDialog = new System.Windows.Forms.Button();
+            this.labelChangeText = new System.Windows.Forms.Label();
+            this.textBoxTo = new System.Windows.Forms.TextBox();
+            this.buttonChangeText = new System.Windows.Forms.Button();
+            this.textBoxFrom = new System.Windows.Forms.TextBox();
+            this.labelExploringDirectory = new System.Windows.Forms.Label();
             this.label_SelectedURL = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // checkListBox_DirectoryFiles
+            // checkListBoxDirectoryFiles
             // 
-            this.checkListBox_DirectoryFiles.CheckOnClick = true;
-            this.checkListBox_DirectoryFiles.FormattingEnabled = true;
-            this.checkListBox_DirectoryFiles.Location = new System.Drawing.Point(16, 32);
-            this.checkListBox_DirectoryFiles.Name = "checkListBox_DirectoryFiles";
-            this.checkListBox_DirectoryFiles.Size = new System.Drawing.Size(312, 328);
-            this.checkListBox_DirectoryFiles.TabIndex = 0;
+            this.checkListBoxDirectoryFiles.CheckOnClick = true;
+            this.checkListBoxDirectoryFiles.FormattingEnabled = true;
+            this.checkListBoxDirectoryFiles.Location = new System.Drawing.Point(16, 32);
+            this.checkListBoxDirectoryFiles.Name = "checkListBoxDirectoryFiles";
+            this.checkListBoxDirectoryFiles.Size = new System.Drawing.Size(312, 328);
+            this.checkListBoxDirectoryFiles.TabIndex = 0;
             // 
-            // textBox_PrefixContainer
+            // textBoxPrefixContainer
             // 
-            this.textBox_PrefixContainer.Location = new System.Drawing.Point(344, 48);
-            this.textBox_PrefixContainer.Name = "textBox_PrefixContainer";
-            this.textBox_PrefixContainer.PlaceholderText = " <- This side of the text";
-            this.textBox_PrefixContainer.Size = new System.Drawing.Size(152, 23);
-            this.textBox_PrefixContainer.TabIndex = 1;
+            this.textBoxPrefixContainer.Location = new System.Drawing.Point(344, 48);
+            this.textBoxPrefixContainer.Name = "textBoxPrefixContainer";
+            this.textBoxPrefixContainer.PlaceholderText = " <- This side of the text";
+            this.textBoxPrefixContainer.Size = new System.Drawing.Size(152, 23);
+            this.textBoxPrefixContainer.TabIndex = 1;
             // 
-            // checkListBox_SelectedFiles
+            // checkListBoxSelectedFiles
             // 
-            this.checkListBox_SelectedFiles.FormattingEnabled = true;
-            this.checkListBox_SelectedFiles.Location = new System.Drawing.Point(512, 32);
-            this.checkListBox_SelectedFiles.Name = "checkListBox_SelectedFiles";
-            this.checkListBox_SelectedFiles.Size = new System.Drawing.Size(312, 328);
-            this.checkListBox_SelectedFiles.TabIndex = 2;
+            this.checkListBoxSelectedFiles.FormattingEnabled = true;
+            this.checkListBoxSelectedFiles.Location = new System.Drawing.Point(512, 32);
+            this.checkListBoxSelectedFiles.Name = "checkListBoxSelectedFiles";
+            this.checkListBoxSelectedFiles.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.checkListBoxSelectedFiles.Size = new System.Drawing.Size(312, 328);
+            this.checkListBoxSelectedFiles.TabIndex = 2;
             // 
-            // label_Prefix
+            // labelPrefix
             // 
-            this.label_Prefix.AutoSize = true;
-            this.label_Prefix.Location = new System.Drawing.Point(344, 24);
-            this.label_Prefix.Name = "label_Prefix";
-            this.label_Prefix.Size = new System.Drawing.Size(37, 15);
-            this.label_Prefix.TabIndex = 3;
-            this.label_Prefix.Text = "Prefix";
+            this.labelPrefix.AutoSize = true;
+            this.labelPrefix.Location = new System.Drawing.Point(344, 24);
+            this.labelPrefix.Name = "labelPrefix";
+            this.labelPrefix.Size = new System.Drawing.Size(37, 15);
+            this.labelPrefix.TabIndex = 3;
+            this.labelPrefix.Text = "Prefix";
             // 
-            // button_PrefixAdd
+            // buttonPrefixAdd
             // 
-            this.button_PrefixAdd.Location = new System.Drawing.Point(344, 80);
-            this.button_PrefixAdd.Name = "button_PrefixAdd";
-            this.button_PrefixAdd.Size = new System.Drawing.Size(152, 23);
-            this.button_PrefixAdd.TabIndex = 4;
-            this.button_PrefixAdd.Text = "Add Prefix";
-            this.button_PrefixAdd.UseVisualStyleBackColor = true;
+            this.buttonPrefixAdd.Location = new System.Drawing.Point(344, 80);
+            this.buttonPrefixAdd.Name = "buttonPrefixAdd";
+            this.buttonPrefixAdd.Size = new System.Drawing.Size(152, 23);
+            this.buttonPrefixAdd.TabIndex = 4;
+            this.buttonPrefixAdd.Text = "Add Prefix";
+            this.buttonPrefixAdd.UseVisualStyleBackColor = true;
+            this.buttonPrefixAdd.Click += new System.EventHandler(this.buttonPrefixAdd_Click);
             // 
-            // label_Suffix
+            // labelSuffix
             // 
-            this.label_Suffix.AutoSize = true;
-            this.label_Suffix.Location = new System.Drawing.Point(344, 128);
-            this.label_Suffix.Name = "label_Suffix";
-            this.label_Suffix.Size = new System.Drawing.Size(37, 15);
-            this.label_Suffix.TabIndex = 5;
-            this.label_Suffix.Text = "Suffix";
+            this.labelSuffix.AutoSize = true;
+            this.labelSuffix.Location = new System.Drawing.Point(344, 128);
+            this.labelSuffix.Name = "labelSuffix";
+            this.labelSuffix.Size = new System.Drawing.Size(37, 15);
+            this.labelSuffix.TabIndex = 5;
+            this.labelSuffix.Text = "Suffix";
             // 
-            // textBox_SuffixContainer
+            // textBoxSuffixContainer
             // 
-            this.textBox_SuffixContainer.Location = new System.Drawing.Point(344, 152);
-            this.textBox_SuffixContainer.Name = "textBox_SuffixContainer";
-            this.textBox_SuffixContainer.PlaceholderText = "This side of the text ->";
-            this.textBox_SuffixContainer.Size = new System.Drawing.Size(152, 23);
-            this.textBox_SuffixContainer.TabIndex = 6;
+            this.textBoxSuffixContainer.Location = new System.Drawing.Point(344, 152);
+            this.textBoxSuffixContainer.Name = "textBoxSuffixContainer";
+            this.textBoxSuffixContainer.PlaceholderText = "This side of the text ->";
+            this.textBoxSuffixContainer.Size = new System.Drawing.Size(152, 23);
+            this.textBoxSuffixContainer.TabIndex = 6;
             // 
-            // button_SuffixAdd
+            // buttonSuffixAdd
             // 
-            this.button_SuffixAdd.Location = new System.Drawing.Point(344, 184);
-            this.button_SuffixAdd.Name = "button_SuffixAdd";
-            this.button_SuffixAdd.Size = new System.Drawing.Size(152, 23);
-            this.button_SuffixAdd.TabIndex = 7;
-            this.button_SuffixAdd.Text = "Add Suffix";
-            this.button_SuffixAdd.UseVisualStyleBackColor = true;
+            this.buttonSuffixAdd.Location = new System.Drawing.Point(344, 184);
+            this.buttonSuffixAdd.Name = "buttonSuffixAdd";
+            this.buttonSuffixAdd.Size = new System.Drawing.Size(152, 23);
+            this.buttonSuffixAdd.TabIndex = 7;
+            this.buttonSuffixAdd.Text = "Add Suffix";
+            this.buttonSuffixAdd.UseVisualStyleBackColor = true;
+            this.buttonSuffixAdd.Click += new System.EventHandler(this.buttonSuffixAdd_Click);
             // 
             // progressBar
             // 
@@ -125,68 +127,60 @@ namespace FileRenamer
             this.progressBar.Size = new System.Drawing.Size(312, 23);
             this.progressBar.TabIndex = 8;
             // 
-            // button_ToDirectoryDialog
+            // buttonToDirectoryDialog
             // 
-            this.button_ToDirectoryDialog.Location = new System.Drawing.Point(16, 376);
-            this.button_ToDirectoryDialog.Name = "button_ToDirectoryDialog";
-            this.button_ToDirectoryDialog.Size = new System.Drawing.Size(112, 23);
-            this.button_ToDirectoryDialog.TabIndex = 9;
-            this.button_ToDirectoryDialog.Text = "Diretory Selection";
-            this.button_ToDirectoryDialog.UseVisualStyleBackColor = true;
-            this.button_ToDirectoryDialog.Click += new System.EventHandler(this.button_ToDirectoryDialog_Click);
+            this.buttonToDirectoryDialog.Location = new System.Drawing.Point(16, 376);
+            this.buttonToDirectoryDialog.Name = "buttonToDirectoryDialog";
+            this.buttonToDirectoryDialog.Size = new System.Drawing.Size(112, 23);
+            this.buttonToDirectoryDialog.TabIndex = 9;
+            this.buttonToDirectoryDialog.Text = "Directory Selection";
+            this.buttonToDirectoryDialog.UseVisualStyleBackColor = true;
+            this.buttonToDirectoryDialog.Click += new System.EventHandler(this.button_ToDirectoryDialog_Click);
             // 
-            // label_ChangeText
+            // labelChangeText
             // 
-            this.label_ChangeText.AutoSize = true;
-            this.label_ChangeText.Location = new System.Drawing.Point(344, 232);
-            this.label_ChangeText.Name = "label_ChangeText";
-            this.label_ChangeText.Size = new System.Drawing.Size(72, 15);
-            this.label_ChangeText.TabIndex = 10;
-            this.label_ChangeText.Text = "Change Text";
+            this.labelChangeText.AutoSize = true;
+            this.labelChangeText.Location = new System.Drawing.Point(344, 232);
+            this.labelChangeText.Name = "labelChangeText";
+            this.labelChangeText.Size = new System.Drawing.Size(72, 15);
+            this.labelChangeText.TabIndex = 10;
+            this.labelChangeText.Text = "Change Text";
             // 
-            // textBox_To
+            // textBoxTo
             // 
-            this.textBox_To.Location = new System.Drawing.Point(344, 288);
-            this.textBox_To.Name = "textBox_To";
-            this.textBox_To.PlaceholderText = "To this text";
-            this.textBox_To.Size = new System.Drawing.Size(152, 23);
-            this.textBox_To.TabIndex = 11;
+            this.textBoxTo.Location = new System.Drawing.Point(344, 288);
+            this.textBoxTo.Name = "textBoxTo";
+            this.textBoxTo.PlaceholderText = "To this text";
+            this.textBoxTo.Size = new System.Drawing.Size(152, 23);
+            this.textBoxTo.TabIndex = 11;
             // 
-            // button_ChangeText
+            // buttonChangeText
             // 
-            this.button_ChangeText.Location = new System.Drawing.Point(344, 320);
-            this.button_ChangeText.Name = "button_ChangeText";
-            this.button_ChangeText.Size = new System.Drawing.Size(152, 23);
-            this.button_ChangeText.TabIndex = 12;
-            this.button_ChangeText.Text = "Change Text";
-            this.button_ChangeText.UseVisualStyleBackColor = true;
+            this.buttonChangeText.Location = new System.Drawing.Point(344, 320);
+            this.buttonChangeText.Name = "buttonChangeText";
+            this.buttonChangeText.Size = new System.Drawing.Size(152, 23);
+            this.buttonChangeText.TabIndex = 12;
+            this.buttonChangeText.Text = "Change Text";
+            this.buttonChangeText.UseVisualStyleBackColor = true;
+            this.buttonChangeText.Click += new System.EventHandler(this.buttonChangeText_Click);
             // 
-            // textBox_From
+            // textBoxFrom
             // 
-            this.textBox_From.Location = new System.Drawing.Point(344, 256);
-            this.textBox_From.Multiline = true;
-            this.textBox_From.Name = "textBox_From";
-            this.textBox_From.PlaceholderText = "From this text";
-            this.textBox_From.Size = new System.Drawing.Size(152, 23);
-            this.textBox_From.TabIndex = 13;
+            this.textBoxFrom.Location = new System.Drawing.Point(344, 256);
+            this.textBoxFrom.Multiline = true;
+            this.textBoxFrom.Name = "textBoxFrom";
+            this.textBoxFrom.PlaceholderText = "From this text";
+            this.textBoxFrom.Size = new System.Drawing.Size(152, 23);
+            this.textBoxFrom.TabIndex = 13;
             // 
-            // label_extension
+            // labelExploringDirectory
             // 
-            this.label_extension.AutoSize = true;
-            this.label_extension.Location = new System.Drawing.Point(280, 376);
-            this.label_extension.Name = "label_extension";
-            this.label_extension.Size = new System.Drawing.Size(38, 15);
-            this.label_extension.TabIndex = 14;
-            this.label_extension.Text = "label1";
-            // 
-            // label_ExploringDirectory
-            // 
-            this.label_ExploringDirectory.AutoSize = true;
-            this.label_ExploringDirectory.Location = new System.Drawing.Point(16, 8);
-            this.label_ExploringDirectory.Name = "label_ExploringDirectory";
-            this.label_ExploringDirectory.Size = new System.Drawing.Size(111, 15);
-            this.label_ExploringDirectory.TabIndex = 15;
-            this.label_ExploringDirectory.Text = "Exploring Directory:";
+            this.labelExploringDirectory.AutoSize = true;
+            this.labelExploringDirectory.Location = new System.Drawing.Point(16, 8);
+            this.labelExploringDirectory.Name = "labelExploringDirectory";
+            this.labelExploringDirectory.Size = new System.Drawing.Size(111, 15);
+            this.labelExploringDirectory.TabIndex = 15;
+            this.labelExploringDirectory.Text = "Exploring Directory:";
             // 
             // label_SelectedURL
             // 
@@ -202,22 +196,21 @@ namespace FileRenamer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(838, 409);
             this.Controls.Add(this.label_SelectedURL);
-            this.Controls.Add(this.label_ExploringDirectory);
-            this.Controls.Add(this.label_extension);
-            this.Controls.Add(this.textBox_From);
-            this.Controls.Add(this.button_ChangeText);
-            this.Controls.Add(this.textBox_To);
-            this.Controls.Add(this.label_ChangeText);
-            this.Controls.Add(this.button_ToDirectoryDialog);
+            this.Controls.Add(this.labelExploringDirectory);
+            this.Controls.Add(this.textBoxFrom);
+            this.Controls.Add(this.buttonChangeText);
+            this.Controls.Add(this.textBoxTo);
+            this.Controls.Add(this.labelChangeText);
+            this.Controls.Add(this.buttonToDirectoryDialog);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.button_SuffixAdd);
-            this.Controls.Add(this.textBox_SuffixContainer);
-            this.Controls.Add(this.label_Suffix);
-            this.Controls.Add(this.button_PrefixAdd);
-            this.Controls.Add(this.label_Prefix);
-            this.Controls.Add(this.checkListBox_SelectedFiles);
-            this.Controls.Add(this.textBox_PrefixContainer);
-            this.Controls.Add(this.checkListBox_DirectoryFiles);
+            this.Controls.Add(this.buttonSuffixAdd);
+            this.Controls.Add(this.textBoxSuffixContainer);
+            this.Controls.Add(this.labelSuffix);
+            this.Controls.Add(this.buttonPrefixAdd);
+            this.Controls.Add(this.labelPrefix);
+            this.Controls.Add(this.checkListBoxSelectedFiles);
+            this.Controls.Add(this.textBoxPrefixContainer);
+            this.Controls.Add(this.checkListBoxDirectoryFiles);
             this.Name = "FileRenamer";
             this.Text = "FileRenamer";
             this.ResumeLayout(false);
@@ -227,23 +220,22 @@ namespace FileRenamer
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkListBox_DirectoryFiles;
-        private System.Windows.Forms.TextBox textBox_PrefixContainer;
-        private System.Windows.Forms.CheckedListBox checkListBox_SelectedFiles;
-        private System.Windows.Forms.Label label_Prefix;
-        private System.Windows.Forms.Button button_PrefixAdd;
-        private System.Windows.Forms.Label label_Suffix;
-        private System.Windows.Forms.TextBox textBox_SuffixContainer;
-        private System.Windows.Forms.Button button_SuffixAdd;
+        private System.Windows.Forms.CheckedListBox checkListBoxDirectoryFiles;
+        private System.Windows.Forms.TextBox textBoxPrefixContainer;
+        private System.Windows.Forms.CheckedListBox checkListBoxSelectedFiles;
+        private System.Windows.Forms.Label labelPrefix;
+        private System.Windows.Forms.Button buttonPrefixAdd;
+        private System.Windows.Forms.Label labelSuffix;
+        private System.Windows.Forms.TextBox textBoxSuffixContainer;
+        private System.Windows.Forms.Button buttonSuffixAdd;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog;
-        private System.Windows.Forms.Button button_ToDirectoryDialog;
-        private System.Windows.Forms.Label label_ChangeText;
-        private System.Windows.Forms.TextBox textBox_To;
-        private System.Windows.Forms.Button button_ChangeText;
-        private System.Windows.Forms.TextBox textBox_From;
-        private System.Windows.Forms.Label label_extension;
-        private System.Windows.Forms.Label label_ExploringDirectory;
+        private System.Windows.Forms.Button buttonToDirectoryDialog;
+        private System.Windows.Forms.Label labelChangeText;
+        private System.Windows.Forms.TextBox textBoxTo;
+        private System.Windows.Forms.Button buttonChangeText;
+        private System.Windows.Forms.TextBox textBoxFrom;
+        private System.Windows.Forms.Label labelExploringDirectory;
         private System.Windows.Forms.Label label_SelectedURL;
     }
 }

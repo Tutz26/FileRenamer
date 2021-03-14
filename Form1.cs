@@ -14,19 +14,33 @@ namespace FileRenamer
 {
     public partial class FileRenamer : Form
     {
-        
         // List where the files string in the directory are stored:
         List<string> filesInDirectory = new List<string>();
+        List<string> checkedItemsList = new List<string>();
 
         // URL of selected directory:
         String directoryURL;
 
+        // Progress Bar
+
         public FileRenamer()
         {
             InitializeComponent();
+
+            // ITEM CHECK:
+            this.checkListBoxDirectoryFiles.ItemCheck += new ItemCheckEventHandler(this.checkListBoxDirectoryFiles_ItemCheck);
+
+
+            // TEXT CHANGES:
+            this.textBoxPrefixContainer.TextChanged += new EventHandler(this.textBoxPrefixContainer_TextChanged);
+            this.textBoxSuffixContainer.TextChanged += new EventHandler(this.textBoxSuffixContainer_TextChanged);
+            this.textBoxFrom.TextChanged += new EventHandler(this.textBoxFrom_TextChanged);
+            this.textBoxTo.TextChanged += new EventHandler(this.textBoxTo_TextChanged);
+            this.textBoxTo.TextChanged += new EventHandler(this.textBoxTo_TextChanged);            
+
         }
 
-        // Directory Selection:
+        //EVENTS:
         private void button_ToDirectoryDialog_Click(object sender, EventArgs e)
         {
 
@@ -37,12 +51,8 @@ namespace FileRenamer
             // If a directory is selected
             if (dialogResult == DialogResult.OK)
             {
-                // CLear the values in LIST:
-                filesInDirectory.Clear();
-
-                // Clear the values in the CHECKLIST:
-                checkListBox_DirectoryFiles.Items.Clear();
-
+                // Clear the selected files in the other checkbox
+                checkListBoxSelectedFiles.Items.Clear();
 
                 // Open selection Dialog:
                 directoryURL = folderBrowserDialog.SelectedPath;
@@ -57,61 +67,271 @@ namespace FileRenamer
                 return;
             }
 
-        }
+        }// [DONE]
 
+        private void textBoxPrefixContainer_TextChanged(object sender, EventArgs e) 
+        {
+            recalculateTexts();
+            reloadFromList();
+        }// [DONE]
 
+        private void textBoxSuffixContainer_TextChanged(object sender, EventArgs e)
+        {
+            recalculateTexts();
+            reloadFromList();
+        }// [DONE]
 
-        // On change in checlist event:
-        private void checkListBox_DirectoryFiles_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void textBoxFrom_TextChanged(object sender, EventArgs e)
+        {
+            recalculateTexts();
+            reloadFromList();
+        }// [DONE]
+
+        private void textBoxTo_TextChanged(object sender, EventArgs e)
+        {
+            recalculateTexts();
+            reloadFromList();
+        }// [DONE]
+
+        private void checkListBoxDirectoryFiles_ItemCheck(object sender, ItemCheckEventArgs e)
         {
 
-            String currentItem = checkListBox_DirectoryFiles.SelectedItem.ToString();
+            String itemName = checkListBoxDirectoryFiles.Items[e.Index].ToString();
 
-            checkListBox_SelectedFiles.Items.Add(currentItem);
+            if (e.NewValue == CheckState.Checked)
+            {
+                itemName = finalText(itemName);
+                checkedItemsList.Add(itemName);
+            }
+            else
+            {
+                for (int i = 0; i < checkedItemsList.Count; i++)
+                {
+                    if (finalText(itemName) == checkedItemsList[i])
+                    {
+                        checkedItemsList.RemoveAt(i);
+                    }
+                }
 
+            }
+            //recalculateTexts();
+            reloadFromList();
+
+        } //[DONE]
+
+        private void buttonPrefixAdd_Click(object sender, EventArgs e)
+        {
+            addPrefixToFileName();
+        }//[DONE]
+
+        private void buttonSuffixAdd_Click(object sender, EventArgs e)
+        {
+            addSuffixToFileName();
         }
 
+        private void buttonChangeText_Click(object sender, EventArgs e)
+        {
+            changeTextToFileName();
+        }
 
-
-
-        // Fills the checlist with the dialog values and stores it into a List
+        // LIST AND CALCULATIONS:
         private void checkListFill(String url) 
         {
+
+            // Clear the values in both CHECKLISTs and stored list:
+            filesInDirectory.Clear();
+            checkListBoxDirectoryFiles.Items.Clear();
+            checkedItemsList.Clear();
+
+
             filesInDirectory.AddRange(Directory.GetFiles(url));
 
 
             foreach (String fileName in filesInDirectory)
             {
-                // TEST:
-                label_extension.Text = findFileExtension(fileName);
-                //
-
-                checkListBox_DirectoryFiles.Items.Add(fileName.Replace(url, "").Substring(1));
-
-                
+                checkListBoxDirectoryFiles.Items.Add(fileName.Replace(url, "").Substring(1));                
             }
 
-            //  checkListBox_FolderFiles.Items.AddRange(filesInDirectory);
+        }//[DONE]
 
+        private void recalculateTexts() 
+        {
+            // CLEAR LIST
+            checkedItemsList.Clear();
 
+            // CALCULATIONS
+            foreach (var checkedItem in checkListBoxDirectoryFiles.CheckedItems) 
+            {
+                String nameOfCheckedItem = checkedItem.ToString();
+
+                nameOfCheckedItem = finalText(nameOfCheckedItem);
+
+                //// ADD ITEM TO LIST
+                checkedItemsList.Add(nameOfCheckedItem);
+
+            }
+
+        }// [DONE]
+
+        private void reloadFromList() 
+        {
+            checkListBoxSelectedFiles.Items.Clear();
+
+            if (checkedItemsList.Count > 0) 
+            {
+                foreach (String itemName in checkedItemsList) 
+                {
+                    checkListBoxSelectedFiles.Items.Add(itemName);
+                }                            
+            }
+            
+
+        }// [DONE]
+
+        private String finalText (String itemName) 
+        {
+            // PREFIX CALCULATION:
+            if (textBoxPrefixContainer.Text != "")
+            {
+                itemName = itemName.Insert(0, textBoxPrefixContainer.Text);
+            }
+
+            // SUFFIX CALCULATION:
+            if (textBoxSuffixContainer.Text != "")
+            {
+                itemName = itemName.Insert(itemName.IndexOf("."), textBoxSuffixContainer.Text);
+            }
+
+            // FROM TO CALCULATION:
+            if (textBoxFrom.Text != "")
+            {
+                itemName = itemName.Replace(textBoxFrom.Text, textBoxTo.Text);
+            }
+
+            return itemName;
 
         }
 
-        private void addPrefixToFileName(String prefixToAdd, String fileURL) 
+        // ACTIONS:
+        private void addPrefixToFileName()
         {
 
-          //  System.IO.File.Move("oldfilename", "newfilename");
+            if (textBoxPrefixContainer.Text != "")
+            {
+                int itemCount = 0;
+                foreach (var item in checkListBoxDirectoryFiles.CheckedItems) 
+                {
+                    
+                    for (int i = 0; i < checkedItemsList.Count; i++) 
+                    {
+                        if (finalText(item.ToString()) == checkedItemsList[i]) 
+                        {
+                            String itemNewName = item.ToString().Insert(0, textBoxPrefixContainer.Text);
+                            if (fileRenaming(item.ToString(), itemNewName, directoryURL))
+                            {
+                                checkListBoxSelectedFiles.SetItemChecked(itemCount, true);
+                            }
+                        }                    
+                    }
+                    ++itemCount;
+                }
 
-        }
+                checkListFill(directoryURL);
+                MessageBox.Show("Succesfully added prefix to the marked files");
 
-        private String findFileExtension(String fileURL)
+            }
+
+        }// [DONE]
+
+        private void addSuffixToFileName()
         {
 
-            int lastPointInString = fileURL.LastIndexOf(".");
-            string fileExtension = fileURL.Substring(lastPointInString);
+            if (textBoxSuffixContainer.Text != "")
+            {
+                int itemCount = 0;
+                foreach (var item in checkListBoxDirectoryFiles.CheckedItems)
+                {
 
-            return fileExtension;
-        
+                    for (int i = 0; i < checkedItemsList.Count; i++)
+                    {
+                        if (finalText(item.ToString()) == checkedItemsList[i])
+                        {
+                            String itemNewName = item.ToString();
+                            itemNewName = itemNewName.Insert(itemNewName.IndexOf("."), textBoxSuffixContainer.Text);
+                            if (fileRenaming(item.ToString(), itemNewName, directoryURL))
+                            {
+                                checkListBoxSelectedFiles.SetItemChecked(itemCount, true);
+                            }
+                        }
+                    }
+                    ++itemCount;
+                }
+
+                checkListFill(directoryURL);
+                MessageBox.Show("Succesfully added suffix to the marked files");
+
+            }
+
+        }// [DONE]
+
+        private void changeTextToFileName()
+        {
+
+            if (textBoxFrom.Text != "")
+            {
+                int itemCount = 0;
+                foreach (var item in checkListBoxDirectoryFiles.CheckedItems)
+                {
+
+                    for (int i = 0; i < checkedItemsList.Count; i++)
+                    {
+                        if (finalText(item.ToString()) == checkedItemsList[i])
+                        {
+                            String itemNewName = item.ToString().Replace(textBoxFrom.Text, textBoxTo.Text);
+                            if (fileRenaming(item.ToString(), itemNewName, directoryURL))
+                            {
+                                checkListBoxSelectedFiles.SetItemChecked(itemCount, true);
+                            }
+                        }
+                    }
+                    ++itemCount;
+                }
+
+                checkListFill(directoryURL);
+                MessageBox.Show("Succesfully changed text to the marked files");
+
+            }
+
+        }// [DONE]
+
+        // FILE MANAGEMENT:
+        private bool fileRenaming(String oldFileName, String newFileName, String directory)
+        {
+            oldFileName = oldFileName.Insert(0, directory + "/");
+            newFileName = newFileName.Insert(0, directory + "/");
+
+            System.IO.FileInfo file = new System.IO.FileInfo(oldFileName);
+
+            if (file.Exists)
+            {
+                // Try to move and rename the file:
+                try
+                {
+                    file.MoveTo(newFileName);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+            else 
+            {
+                return false;
+            }
+
+
+
         }
 
 
