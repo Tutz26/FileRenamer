@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/vyc/JnFLN7aI3qrTKkV5PrCxWV6gAKeRj2+d2nuvCij1SuWjPwdZNm0ZrGFFluUr0sUGKDu/ibE7GFCkDlgTQ==",
+  "dgSpecHash": "KCK5M9lp43uodFEvzlH+7zpVCH2o7UeMCEltU+alw8A10UO9XGOwZMutPZiwC0AV782K7WVZ6RhIUd54jlW+DA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Tutz\\Desktop\\Octavo Semestre\\Proyectos Multimedia\\FIleRenamer\\FileRenamer\\FileRenamer.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Tutz\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\5.0.4\\microsoft.netcore.app.runtime.win-x64.5.0.4.nupkg.sha512",
+    "C:\\Users\\Tutz\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\5.0.4\\microsoft.windowsdesktop.app.runtime.win-x64.5.0.4.nupkg.sha512",
+    "C:\\Users\\Tutz\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\5.0.4\\microsoft.aspnetcore.app.runtime.win-x64.5.0.4.nupkg.sha512"
+  ],
   "logs": []
 }

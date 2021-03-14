@@ -4,6 +4,20 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>FileRenamer.Program</StartupObject>
+    <ApplicationIcon>File_Renamer.ico</ApplicationIcon>
+    <Authors>Tutz</Authors>
+    <Company>hauntedhat</Company>
+    <PackageProjectUrl>https://github.com/Tutz26/FileRenamer</PackageProjectUrl>
+    <PackageIcon>File_Renamer.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Tutz26/FileRenamer</RepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="File_Renamer.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
